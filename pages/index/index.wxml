@@ -1,0 +1,15 @@
+<!--index.wxml-->
+<view id="game_box" class="container" catch:touchstart="touchStart" catch:touchmove="touchMove" catch:touchend="touchEnd">
+  <view wx:for="{{grids}}" wx:for-index="rowIdx" wx:for-item="row" wx:key="rowIdx" class="grid-row">
+    <view wx:for="{{row}}" wx:for-index="colIdx" wx:for-item="cell" wx:key="colIdx" class="grid-cell">
+      <view class="tile tile-{{cell}}">
+        <view wx:if="{{cell}}" class="tile-inner">
+          {{cell}}
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view>
+  <button catch:tap="restart">restart</button>
+</view>

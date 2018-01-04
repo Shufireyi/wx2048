@@ -1,0 +1,62 @@
+/**index.wxss**/
+.container {
+  margin: 20px auto;
+  width: 215px;
+  height: 215px;
+  /* border: 1px solid #666; */
+  background-color: #ccc;
+  overflow: hidden;
+}
+
+.grid-row {
+  margin: 3px;
+}
+
+.grid-row::after {
+  content: "";
+  display: block;
+  clear: both;
+  visibility: hidden;
+}
+
+.grid-cell {
+  box-sizing: border-box;
+  width: 50px;
+  height: 50px;
+  margin-right: 3px;
+  float: left;
+  border-radius: 3px;
+  background: rgba(238, 228, 218, 0.35);
+}
+.grid-cell:last-child {
+  margin-right: 0;
+}
+.title {
+}
+.title-2 {
+}
+.title-4 {
+}
+.title-8 {
+}
+.title-16 {
+}
+.title-32 {
+}
+.title-64 {
+}
+.title-128 {
+}
+.title-256 {
+}
+.title-512 {
+}
+.title-1024 {
+}
+.title-2048 {
+}
+.tile-inner {
+  text-align: center;
+  font: 24px bold black;
+  line-height: 50px;
+}
