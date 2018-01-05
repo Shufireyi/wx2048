@@ -8,10 +8,12 @@
     <view wx:for="{{row}}" wx:for-index="colIdx" wx:for-item="cell" wx:key="colIdx" class="grid-cell">
       <view class="tile tile-{{cell}}">
         <view wx:if="{{cell}}" class="tile-inner">
-          {{Mapping[cell]}}
-          <!-- <view wx:if="">
-            <img src="{{}}">
-          </view> -->
+          <view wx:if="{{Mapping[cell].text}}">
+            {{Mapping[cell].text}}
+          </view>
+          <view wx:else>
+            <image style="height:45px;width:45px;border-radius:3px" src="{{Mapping[cell].image}}"></image>
+          </view>
         </view>
       </view>
     </view>

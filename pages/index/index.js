@@ -10,8 +10,14 @@ Page({
     rows: 4,
     cols: 4,
     Mapping: {
-      "2": "一",
-      "4": "二",
+      "2": {
+        // text: "一",
+        image: "http://i2.cqnews.net/news/attachement/jpg/site82/2016-08-24/1321563386452200449.jpg"
+      },
+      "4": {
+        // text: "二",
+        image: "http://pic39.nipic.com/20140308/496038_210222044000_2.jpg"
+      },
       "8": "三",
       "16": "四",
       "32": "五",
@@ -43,6 +49,7 @@ Page({
   },
   onReady: function() {
     // let gameBox = selectorQuery.select("#game_box");
+    wx.hideLoading();
   },
 
   // 作弊～ 测试获得2048的情况
