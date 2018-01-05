@@ -8,7 +8,22 @@ Page({
   data: {
     grids: [],
     rows: 4,
-    cols: 4
+    cols: 4,
+    Mapping: {
+      "2": "一",
+      "4": "二",
+      "8": "三",
+      "16": "四",
+      "32": "五",
+      "64": "六",
+      "128": "七",
+      "256": "八",
+      "512": "九",
+      "1024": "十",
+      "2048": "哇哦"
+    },
+    userInfo: {},
+    hasUserInfo: false
   },
   onLoad: function() {
     this.setData({
@@ -17,6 +32,14 @@ Page({
     this.generateNumber();
     this.generateNumber();
     // this.zuobi();
+    wx.getUserInfo({
+      success: res => {
+        this.setData({
+          userInfo: res.userInfo,
+          hasUserInfo: true
+        });
+      }
+    });
   },
   onReady: function() {
     // let gameBox = selectorQuery.select("#game_box");
@@ -74,7 +97,7 @@ Page({
   /**
    * 判断是否有空余空间产生新的数字
    *
-   * @returns 布尔值 
+   * @returns 布尔值
    */
   hasSpace: function() {
     let flag = false;
@@ -175,17 +198,23 @@ Page({
 
     // 成功获得2048
     if (this.isSuccess()) {
-      console.log("you got the 2048! congratulations！");
+      wx.showToast({
+        title: "congratulations！",
+        duration: 1500
+      });
     } else {
       // 生成新的2/4
       this.generateNumber();
       // 判断游戏是否结束
       if (!this.hasSpace()) {
-        console.log("game over !");
+        wx.showToast({
+          title: "game over !",
+          duration: 1500
+        });
       }
     }
   },
-  
+
   /**
    * 滑动后消除格子之间的空白格å
    * @param {any} arr 二维数组
@@ -251,7 +280,7 @@ Page({
         }
         break;
     }
-    console.log("删除空格后", rv);
+    // console.log("删除空格后", rv);
     return rv;
   },
 
@@ -321,7 +350,14 @@ Page({
         }
         break;
     }
-    console.log("合并相同数字后", rv);
+    // console.log("合并相同数字后", rv);
     return rv;
   }
 });
+
+// //事件处理函数
+// bindViewTap: function() {
+//   wx.navigateTo({
+//     url: "../logs/logs"
+//   });
+// },

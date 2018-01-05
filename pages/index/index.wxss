@@ -1,4 +1,23 @@
 /**index.wxss**/
+
+.avatar {
+  height: 40px;
+  text-align: center;
+}
+.avatar image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.avatar .userinfo-nickname {
+  display: inline-block;
+  font-size: 14px;
+  height: 40px;
+  line-height: 40px;
+  vertical-align: top;
+  padding-left: 15px;
+}
 .container {
   margin: 20px auto;
   width: 215px;

@@ -1,10 +1,17 @@
 <!--index.wxml-->
+<view class="avatar">
+  <image src="{{userInfo.avatarUrl}}"></image>
+  <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+</view>
 <view id="game_box" class="container" catch:touchstart="touchStart" catch:touchmove="touchMove" catch:touchend="touchEnd">
   <view wx:for="{{grids}}" wx:for-index="rowIdx" wx:for-item="row" wx:key="rowIdx" class="grid-row">
     <view wx:for="{{row}}" wx:for-index="colIdx" wx:for-item="cell" wx:key="colIdx" class="grid-cell">
       <view class="tile tile-{{cell}}">
         <view wx:if="{{cell}}" class="tile-inner">
-          {{cell}}
+          {{Mapping[cell]}}
+          <!-- <view wx:if="">
+            <img src="{{}}">
+          </view> -->
         </view>
       </view>
     </view>
