@@ -12,21 +12,48 @@ Page({
     Mapping: {
       "2": {
         // text: "一",
-        image: "http://i2.cqnews.net/news/attachement/jpg/site82/2016-08-24/1321563386452200449.jpg"
+        image: "./img/2.png"
       },
       "4": {
         // text: "二",
-        image: "http://pic39.nipic.com/20140308/496038_210222044000_2.jpg"
+        image: "./img/4.png"
       },
-      "8": "三",
-      "16": "四",
-      "32": "五",
-      "64": "六",
-      "128": "七",
-      "256": "八",
-      "512": "九",
-      "1024": "十",
-      "2048": "哇哦"
+      "8": {
+        // text: "三",
+        image: "./img/8.png"
+      },
+      "16": {
+        // text: "四",
+        image: "./img/16.png"
+      },
+      "32": {
+        // text: "五",
+        image: "./img/32.png"
+      },
+      "64": {
+        // text: "六",
+        image: "./img/64.png"
+      },
+      "128": {
+        // text: "七",
+        image: "./img/128.png"
+      },
+      "256": {
+        // text: "八",
+        image: "./img/256.png"
+      },
+      "512": {
+        // text: "九",
+        image: "./img/512.png"
+      },
+      "1024": {
+        // text: "十",
+        image: "./img/1024.png"
+      },
+      "2048": {
+        // text: "十一",
+        image: "./img/2048.png"
+      }
     },
     userInfo: {},
     hasUserInfo: false
@@ -359,12 +386,21 @@ Page({
     }
     // console.log("合并相同数字后", rv);
     return rv;
+  },
+
+  /**
+   * 分享
+   *
+   * @param {any} res
+   * @returns
+   */
+  onShareAppMessage: function(res) {
+    return {
+      title: "wx2048的分享",
+      path: "/pages/index",
+      success: () => {
+        console.log("分享成功");
+      }
+    };
   }
 });
-
-// //事件处理函数
-// bindViewTap: function() {
-//   wx.navigateTo({
-//     url: "../logs/logs"
-//   });
-// },
